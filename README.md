@@ -64,8 +64,6 @@
 
 Пример работы с микросервисом обработки видео:
 ```
-json
-
 {
     "url": "https://cdn-st.rutubelist.ru/media/39/6c/b31bc6864bef9d8a96814f1822ca/fhd.mp4",
     "description": "A cat playing with a ball"
@@ -73,8 +71,6 @@ json
 ```
 После отправки запроса на эндпоинт обработки, сервис обработает видео и аудио, сгенерирует теги и вернет результат в следующем формате:
 ```
-json
-
 {
     "id": "1",
     "url": "https://cdn-st.rutubelist.ru/media/39/6c/b31bc6864bef9d8a96814f1822ca/fhd.mp4",
