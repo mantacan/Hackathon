@@ -72,13 +72,12 @@
 После отправки запроса на эндпоинт обработки, сервис обработает видео и аудио, сгенерирует теги и вернет результат в следующем формате:
 ```
 {
-    "id": "1",
-    "url": "https://cdn-st.rutubelist.ru/media/39/6c/b31bc6864bef9d8a96814f1822ca/fhd.mp4",
-    "tags": {
-        "cat": 5,
-        "ball": 4,
-        "play": 3,
-        "video_quality": 2
-    }
+    "message": "GOOD",
+    "results": [
+        {
+            "id": "1",
+            "tags": "{\"video url\": \"https://cdn-st.rutubelist.ru/media/39/6c/b31bc6864bef9d8a96814f1822ca/fhd.mp4\", \"categories\": {\"test\": {\"tags\": [{\"tag\": \"none\", \"weight\": 1}, {\"tag\": \"сейчас\", \"weight\": 1}, {\"tag\": \"тебе\", \"weight\": 1}, {\"tag\": \"покажу\", \"weight\": 1}, {\"tag\": \"секретную\", \"weight\": 1}, {\"tag\": \"команду\", \"weight\": 2}, {\"tag\": \"roblox\", \"weight\": 3}, {\"tag\": \"чтобы\", \"weight\": 2}, {\"tag\": \"её\", \"weight\": 2}, {\"tag\": \"активировать\", \"weight\": 1}, {\"tag\": \"поставь\", \"weight\": 1}, {\"tag\": \"лайк\", \"weight\": 1}, {\"tag\": \"подпишись\", \"weight\": 1}, {\"tag\": \"также\", \"weight\": 1}, {\"tag\": \"введев\", \"weight\": 1}, {\"tag\": \"чат\", \"weight\": 1}, {\"tag\": \"iloveyou\", \"weight\": 1}, {\"tag\": \"когда\", \"weight\": 1}, {\"tag\": \"вы\", \"weight\": 2}, {\"tag\": \"ведете\", \"weight\": 1}, {\"tag\": \"вас\", \"weight\": 1}, {\"tag\": \"на\", \"weight\": 1}, {\"tag\": \"экране\", \"weight\": 1}, {\"tag\": \"появится\", \"weight\": 1}, {\"tag\": \"вот\", \"weight\": 1}, {\"tag\": \"такой\", \"weight\": 1}, {\"tag\": \"clone\", \"weight\": 1}, {\"tag\": \"скрипт\", \"weight\": 1}, {\"tag\": \"был\", \"weight\": 1}, {\"tag\": \"создан\", \"weight\": 1}, {\"tag\": \"одним\", \"weight\": 1}, {\"tag\": \"из\", \"weight\": 2}, {\"tag\": \"создателей\", \"weight\": 1}, {\"tag\": \"работает\", \"weight\": 1}, {\"tag\": \"только\", \"weight\": 1}, {\"tag\": \"игре\", \"weight\": 1}, {\"tag\": \"где\", \"weight\": 1}, {\"tag\": \"есть\", \"weight\": 1}, {\"tag\": \"diva\", \"weight\": 1}, {\"tag\": \"loper\", \"weight\": 1}, {\"tag\": \"service\", \"weight\": 1}, {\"tag\": \"раскрымир\", \"weight\": 1}, {\"tag\": \"он\", \"weight\": 1}, {\"tag\": \"же\", \"weight\": 1}, {\"tag\": \"всего-то\", \"weight\": 1}, {\"tag\": \"выйти\", \"weight\": 1}, {\"tag\": \"игры\", \"weight\": 1}, {\"tag\": \"но\", \"weight\": 1}, {\"tag\": \"лучше\", \"weight\": 1}, {\"tag\": \"не\", \"weight\": 1}, {\"tag\": \"проверяй\", \"weight\": 1}, {\"tag\": \"cat\", \"weight\": 1}, {\"tag\": \"playing\", \"weight\": 1}, {\"tag\": \"ball\", \"weight\": 1}]}}, \"quality\": 1, \"editing\": 0}",
+            "url": "https://cdn-st.rutubelist.ru/media/39/6c/b31bc6864bef9d8a96814f1822ca/fhd.mp4"
+        }]
 }
 ```
