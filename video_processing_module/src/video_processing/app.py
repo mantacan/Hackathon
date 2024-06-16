@@ -28,6 +28,33 @@ def handle_post():
         - При успешной обработке: {'message': 'GOOD', 'results': [{'id': 1, 'url': 'example.com', 'tags': ['tag1', 'tag2']}]}
         - При ошибке формата данных: {'error': 'Expected data to be a list'}, статус 400
         - При ошибке обработки: {'error': 'описание ошибки'}, статус 500
+    ---
+    tags:
+      - Video Processing
+    parameters:
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: The ID of the video.
+              url:
+                type: string
+                description: The URL of the video.
+              description:
+                type: string
+                description: Description of the video.
+    responses:
+      200:
+        description: Video processed successfully.
+      400:
+        description: Error with input data format.
+      500:
+        description: Internal server error.
     """
     data = request.get_json()
 
