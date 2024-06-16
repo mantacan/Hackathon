@@ -1,0 +1,1 @@
+let $PYTHONPATH = expand('<sfile>:p:h')
