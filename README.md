@@ -60,6 +60,7 @@
 
 ## Документация
 
+[Ссылка на документацию](https://docs.google.com/document/d/1UeHJoez48fRU3JpK25Zym_Hco2By91AjhdsRWrNlYo8/edit?usp=sharing)
 ## Примеры
 
 Пример работы с микросервисом обработки видео:
