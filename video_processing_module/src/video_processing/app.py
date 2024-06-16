@@ -1,10 +1,8 @@
-"""Модуль отвечающий за запуск сервера микросервиса"""
-
+import uuid
 from flask import Flask, request, jsonify
 from video_processing.input import Input
 
 app = Flask(__name__)
-
 
 @app.route('/processing', methods=['POST'])
 def handle_post():
@@ -58,30 +56,31 @@ def handle_post():
     """
     data = request.get_json()
 
-    if not isinstance(data, list):
-        return jsonify({"error": "Expected data to be a list"}), 400
+    # Проверка, что данные являются объектом, а не массивом
+    if not isinstance(data, dict):
+        return jsonify({"error": "Expected data to be an object"}), 400
 
-    results = []
-    for item in data:
-        if not all(key in item for key in ['id', 'url', 'description']):
-            return jsonify({"error": "Each item must contain 'id', 'url', and 'description'"}), 400
+    # Проверка наличия необходимых ключей
+    if not all(key in data for key in ['url', 'description']):
+        return jsonify({"error": "Object must contain 'url' and 'description'"}), 400
 
-        try:
-            # Создаем экземпляр класса Input
-            input_instance = Input(item['url'], item['description'])
-            # Обрабатываем запрос и получаем теги
-            tags = input_instance.proceed()
-            result = {
-                "id": item['id'],
-                "url": item['url'],
-                "tags": tags
-            }
-            results.append(result)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
+    try:
+        # Генерация случайного id
+        data_id = str(uuid.uuid4())
 
-    return jsonify({"message": "GOOD", "results": results}), 200
+        # Создаем экземпляр класса Input
+        input_instance = Input(data['url'], data['description'])
+        # Обрабатываем запрос и получаем теги
+        tags = input_instance.proceed()
+        result = {
+            "id": data_id,
+            "url": data['url'],
+            "tags": tags
+        }
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
+    return jsonify({"message": "GOOD", "result": result}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True, host='0.0.0.0')
